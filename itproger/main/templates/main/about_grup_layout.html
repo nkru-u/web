@@ -1,0 +1,97 @@
+{% load static %}
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>{% block title %}{% endblock %}</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body {
+    background: #000000;
+    background-image: url('https://i.pinimg.com/originals/5f/89/c8/5f89c882bcc3014f907322b378b87e28.jpg');
+    width: 1200px;
+    height: 700px;
+    background-size: cover;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0);
+}
+li {
+    float: right;
+}
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 16px; /* Установка размера шрифта */
+    font-family: Arial, sans-serif; /* Установка шрифта */
+}
+.dropbtn {
+    background-color: transparent;
+    border: none;
+}
+li a:hover, .dropdown:hover .dropbtn {
+    color: red;
+}
+li.dropdown {
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #000000;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: white; /* изменение цвета текста на белый */
+}
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.dropdown-content a {
+    color: white; /* изменение цвета текста на белый */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: black; /* изменение цвета фона при наведении на элемент списка и текста на черный */
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<ul>
+  <li class="dropdown">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </li>
+  <li><a href="#home">Login</a></li>
+</ul>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+</html>
+
